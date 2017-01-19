@@ -1,36 +1,130 @@
 * {
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: "Times New Roman", Times, serif;
 	box-sizing: border-box;
 }
-.container{
-	max-width: 100%;
+html{
+	background-color: #EFEFEF;
 }
-h1 {
-	font-size: 300px;
-	text-align: center;
-	color: fuchsia;
+.container{
+	max-width: 60%;
+	margin: auto;
+	background-color: #EFEFEF;
 }
 li{
 	list-style: none;
 }
-.home-view{
-	max-width: 100%;
+.product-list{
+	width: 100%;
+	padding-left: 0;
+	margin-top: 0;
 }
-.header{
-	max-width: 100%;
-	background-color: gray;
-	.buttons{
+.product{
+	border: solid white 4px;
+	position: relative;
+	.left-product{
 		display: inline-block;
-		align: center;
-		.button{
-			padding-right: 5px;
+		width: 35%;
+		.product-image{
+			width:100%;
 		}
 	}
-	.currentUser{
+	.right-product{
+		height: 100%;
+		width: 65%;
 		display: inline-block;
-		color: white;
-		align: right;
-
+		vertical-align: top;
+		.product-header{
+			width: 100%;
+			color: #696969;
+			padding-left: 8px;
+			padding-right: 8px;
+			background-color: #CAEBF2;
+			text-align: center;
+		}
+		.product-body{
+			padding-left: 8px;
+			bottom: 0;
+			width: 100%;
+		}
+		.product-footer{
+			vertical-align: bottom;
+			bottom: 0;
+			.purchase-price{
+				vertical-align: bottom;
+				bottom: 0;
+				padding-left: 8px;
+			}
+			.purchase-button{
+				position: absolute;
+				right: 8px;
+				bottom: 8px;
+			}
+		}
+	}
+}
+.home-view{
+	border: solid white 4px;
+	max-width: 100%;
+	.home-left{
+		display: inline-block;
+		width: 38%;
+		.home-logo{
+			max-width: 100%;
+		}
+	}
+	.home-right{
+		display: inline-block;
+		width: 58%;
+		vertical-align: top;
+		.home-title{
+			color: #696969;
+			background-color: #CAEBF2;
+			text-align: center;
+		}
+		.home-body{
+			color: black;
+		}
+	}
+}
+.header-top{
+		position: absolute;
+		max-width: 100%;
+		background-color: gray;
+		height: 250px;
+		position: relative;
+		background-image: url('https://d3thflcq1yqzn0.cloudfront.net/011958942_prevstill.jpeg');
+		background-repeat: no-repeat;
+	    background-position: center;
+	    background-size: cover;
+	    .header-title{
+	    	padding-top: 5%;
+	    	h2{
+	    		padding-left: 10px;
+	    		color: white;
+	    		font-size: 40px;
+	    		line-height: 50%;
+	    	}
+	    }
+}
+.header-nav{
+	background-color: white;
+	a{
+		display: inline-block;
+		position: relative;
+		font-family: "Times New Roman", Times, serif;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		cursor: auto;
+	}
+	nav {
+		text-align: center;
+	}
+	.link, .link2{
+		margin: 0 .5rem;
+		padding: 0 1rem;
+		height: 40px;
+		line-height: 40px;
+		color: #696969;
 	}
 }
 

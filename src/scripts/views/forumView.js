@@ -3,7 +3,7 @@ import ACTIONS from '../actions'
 import STORE from '../store'
 import Header from './header'
 
-var HomeView = React.createClass({
+var ForumView = React.createClass({
 	componentWillMount: function() {
 		ACTIONS.fetchAllPosts()
 		STORE.on('storeChanged',()=>{
@@ -55,4 +55,4 @@ var Post = React.createClass({
 	}
 })
 //<span className='text'>{this.props.model.get('post')}</span>
-export default HomeView
+export default ForumView

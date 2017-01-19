@@ -1,25 +1,35 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Backbone from 'backbone'
-import HomeView from './views/homeView'
+import AboutView from './views/aboutView'
+import StoreView from './views/storeView'
 import PostView from './views/postView'
 import LoginView from './views/loginView'
+import ForumView from './views/forumView'
 import ProfileView from './views/profileView'
 const app = function() {
 
 
 	const Router = Backbone.Router.extend({
 		routes: {
-			"home": "handleHome",
+			"about": "handleAbout",
+			"store": "handleStore",
+			"forum": "handleForum",
 			"login": "handleLogin",
 			"post": "handlePost",
 			"profile": "handleProfile",
 			"*default": "handleDefault"
 		},
 
-		handleHome: function() {
-			console.log('handling home')
-			ReactDOM.render(<HomeView />, document.querySelector(".container"))
+		handleAbout: function() {
+			ReactDOM.render(<AboutView />, document.querySelector(".container"))
+		},
+		handleStore: function() {
+			ReactDOM.render(<StoreView />, document.querySelector(".container"))
+		},
+		handleForum: function() {
+			console.log('handling forum')
+			ReactDOM.render(<ForumView />, document.querySelector(".container"))
 		},
 		handleLogin: function() {
 			ReactDOM.render(<LoginView />, document.querySelector(".container"))
@@ -31,7 +41,7 @@ const app = function() {
 			ReactDOM.render(<ProfileView />, document.querySelector(".container"))
 		},
 		handleDefault: function(){
-			location.hash = "home"
+			location.hash = "store"
 		},
 		initialize: function() {
 			Backbone.history.start()

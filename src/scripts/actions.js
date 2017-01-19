@@ -67,8 +67,14 @@ const ACTIONS = {
 			}
 		)
 	},
-	homeViewChange: function(){
-		location.hash = 'home'
+	aboutViewChange: function(){
+		location.hash = 'about'
+	},
+	storeViewChange: function(){
+		location.hash = 'store'
+	},
+	forumViewChange: function(){
+		location.hash = 'forum'
 	},
 	loginViewChange: function(){
 		location.hash = 'login'
@@ -98,7 +104,7 @@ const ACTIONS = {
 				function(resp){
 					console.log(resp)
 					alert('User succesfully logged in')
-					location.hash = 'home'
+					location.hash = 'forum'
 				},
 				function(err){
 					console.log(err)
