@@ -33,6 +33,10 @@ const StoreBody = React.createClass({
 	}
 })
 const Product = React.createClass({
+	_showDeets: function() {
+		var product = this.props.model.name
+		location.hash = 'detail/' + product
+	},
 	render: function() {
 		var product = this.props.model
 		return (
@@ -48,7 +52,7 @@ const Product = React.createClass({
 						<p> {product.description} </p>
 					</div>
 					<div className='product-footer'>
-						<p className="purchase-price"> Price: {product.price} </p>
+						<button className="product-button" onClick={this._showDeets}>Learn More</button>
 						<form className="purchase-button" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
 							<input type="hidden" name="cmd" value="_s-xclick"/>
 							<input type="hidden" name="hosted_button_id" value={product.id}/>

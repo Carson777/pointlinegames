@@ -35,6 +35,15 @@ const ACTIONS = {
 			.fail(()=>alert(model.get('first_name') + 'delete failed'))
 		STORE._emitChange()
 	},
+	fetchProduct: function(product) {
+		for(var i = 0; i < STORE._data.productCollection.length; i++){
+			if(STORE._data.productCollection[i].name === product){
+				STORE._set({
+					detailProduct: STORE._data.productCollection[i]
+				})
+			}
+		}
+	},
 	fetchMyPosts: function() {
 		var P = new PostCollection()
 		P.fetch({

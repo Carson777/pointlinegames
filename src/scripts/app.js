@@ -7,6 +7,7 @@ import PostView from './views/postView'
 import LoginView from './views/loginView'
 import ForumView from './views/forumView'
 import ProfileView from './views/profileView'
+import DetailView from './views/detailView'
 const app = function() {
 
 
@@ -14,6 +15,7 @@ const app = function() {
 		routes: {
 			"about": "handleAbout",
 			"store": "handleStore",
+			"detail/:product": "handleDetail",
 			"forum": "handleForum",
 			"login": "handleLogin",
 			"post": "handlePost",
@@ -27,8 +29,10 @@ const app = function() {
 		handleStore: function() {
 			ReactDOM.render(<StoreView />, document.querySelector(".container"))
 		},
-		handleForum: function() {
-			console.log('handling forum')
+		handleDetail: function(product) {
+			ReactDOM.render(<DetailView product = {product} />, document.querySelector(".container"))
+		},
+		handleForum: function(){
 			ReactDOM.render(<ForumView />, document.querySelector(".container"))
 		},
 		handleLogin: function() {
