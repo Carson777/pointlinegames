@@ -20,6 +20,7 @@ const Header = React.createClass({
 						<h2>Point</h2>
 						<h2>Line</h2>
 						<h2>Games</h2>
+						<img className= 'header-logo' src='images/white-logo.png'/>
 					</div>
 				</div>
 				<div className='header-nav'>

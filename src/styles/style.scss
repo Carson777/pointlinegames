@@ -147,15 +147,23 @@ li{
 	    background-position: center;
 	    background-size: cover;
 	    .header-title{
-	    	padding-top: 5%;
+	    	padding-top: 2.5%;
 	    	h2{
 	    		padding-left: 10px;
 	    		color: white;
 	    		font-size: 40px;
 	    		line-height: 50%;
 	    	}
+	    	 .header-logo{
+	    	 position: absolute;
+	    	 bottom: 5px;
+	    	 left: 5px;
+	    	width: 40px;
 	    }
+	    }
+
 }
+
 .header-nav{
 	background-color: white;
 	a{
