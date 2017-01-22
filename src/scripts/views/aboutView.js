@@ -19,7 +19,7 @@ var HomeView = React.createClass({
 				<Header />
 				<div className='home-view'>
 					<div className='home-left'>
-					<img className= 'home-logo' src='images/logo.png'/>
+					<img className= 'home-logo' src='images/logo2.png'/>
 					</div>
 					<div className='home-right'>
 						<h2 className='home-title'> About us</h2>
