@@ -6,7 +6,7 @@ html{
 	background-color: #EFEFEF;
 }
 .container{
-	max-width: 60%;
+	max-width: 70%;
 	margin: auto;
 	background-color: #EFEFEF;
 }
@@ -26,6 +26,7 @@ li{
 		width: 45%;
 		.d-product-image{
 			width:100%;
+			border: 5px solid #b20000;
 		}
 		
 	}
@@ -66,14 +67,15 @@ li{
 	position: relative;
 	.left-product{
 		display: inline-block;
-		width: 35%;
+		width: 45%;
 		.product-image{
 			width:100%;
+			border: 5px solid #b20000;
 		}
 	}
 	.right-product{
 		height: 100%;
-		width: 65%;
+		width: 55%;
 		display: inline-block;
 		vertical-align: top;
 		.product-header{
@@ -92,18 +94,7 @@ li{
 		}
 		.product-footer{
 			bottom: 0;
-			.purchase-price{
-				vertical-align: bottom;
-				bottom: 0;
-				padding-left: 8px;
-			}
-			.product-button{
-				background-color: #b20000;
-				color: white;
-				width: 20%;
-				margin-left: 8px;
-				margin-bottom: 8px;
-			}
+			min-height: 40px;
 			.purchase-button{
 				position: absolute;
 				right: 8px;
@@ -112,6 +103,15 @@ li{
 		}
 	}
 }
+.product-button{
+	background-color: #b20000;
+	color: white;
+	position: absolute;
+	right: 38%;
+	bottom: 12px;
+	width: 15%;
+	border: 2px solid #b20000;
+			}
 .home-view{
 	border: solid white 4px;
 	max-width: 100%;
@@ -175,6 +175,12 @@ li{
 		height: 40px;
 		line-height: 40px;
 		color: #696969;
+	}
+	.view-cart{
+		display: inline-block;
+		padding-top: 10px;
+		padding-right: 10px;
+		float: right;
 	}
 }
 
