@@ -52,11 +52,32 @@ var Post = React.createClass({
 		var content = this.props.model.get('content')
 		return(
 			<li className='post'>
-				<h3>{header}</h3>
-				<p>{this._cleanDate()}</p>
-				<p>{content}</p>
+				<h3 className='postHeader'>{header}</h3>
+				<p className='postDate'>{this._cleanDate()}</p>
+				<p className='postContent'>{content}</p>
+				<Delete model={this.props.model}/>
 			</li>
 		)
+	}
+})
+var Delete = React.createClass({
+	deletePost: function(){
+		ACTIONS.deletePost(this.props.model)
+		reload()
+	},
+	render: function(){
+		if(User.getCurrentUser()){
+			return(
+				<div>
+					<button onClick={this.deletePost}>Delete Post</button>
+				</div>
+			)
+		} else {
+			return(
+				<div>
+				</div>
+			)
+		}
 	}
 })
 var PostArchiveDisplay = React.createClass({

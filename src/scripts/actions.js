@@ -34,9 +34,8 @@ const ACTIONS = {
 	},
 	deletePost: function(model) {
 		model.destroy()
-			//.done(()=>alert(model.get('first_name') + 'deleted!'))
+			.done(()=>alert(model.get('title ') + 'deleted!'))
 			.fail(()=>alert(model.get('first_name') + 'delete failed'))
-		STORE._emitChange()
 	},
 	fetchProduct: function(product) {
 		for(var i = 0; i < STORE._data.productCollection.length; i++){
@@ -143,7 +142,7 @@ const ACTIONS = {
 				function(resp){
 					console.log(resp)
 					alert('User successfully logged out')
-					location.hash = 'blog/new'
+					location.hash = 'store'
 					reload()
 				},
 				function(err){
