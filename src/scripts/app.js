@@ -5,7 +5,7 @@ import AboutView from './views/aboutView'
 import StoreView from './views/storeView'
 import PostView from './views/postView'
 import LoginView from './views/loginView'
-import ForumView from './views/forumView'
+import BlogView from './views/blogView'
 import ProfileView from './views/profileView'
 import DetailView from './views/detailView'
 const app = function() {
@@ -16,7 +16,7 @@ const app = function() {
 			"about": "handleAbout",
 			"store": "handleStore",
 			"detail/:product": "handleDetail",
-			"forum": "handleForum",
+			"blog/:post": "handleBlog",
 			"login": "handleLogin",
 			"post": "handlePost",
 			"profile": "handleProfile",
@@ -32,8 +32,8 @@ const app = function() {
 		handleDetail: function(product) {
 			ReactDOM.render(<DetailView product = {product} />, document.querySelector(".container"))
 		},
-		handleForum: function(){
-			ReactDOM.render(<ForumView />, document.querySelector(".container"))
+		handleBlog: function(post){
+			ReactDOM.render(<BlogView post = {post}/>, document.querySelector(".container"))
 		},
 		handleLogin: function() {
 			ReactDOM.render(<LoginView />, document.querySelector(".container"))

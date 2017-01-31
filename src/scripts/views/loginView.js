@@ -18,7 +18,6 @@ var LoginView = React.createClass({
 			<div className='login-view'>
 				<Header />
 				<Login />
-				<Register />
 			</div>
 		)
 	}
@@ -47,6 +46,7 @@ var Register = React.createClass({
 
 var Login = React.createClass({
 	_handleSubmit: function(eventObj){
+		console.log("login info submitted")
 		eventObj.preventDefault()
 		ACTIONS.loginUser(eventObj.target.daEmail.value, eventObj.target.daPassword.value)
 	},

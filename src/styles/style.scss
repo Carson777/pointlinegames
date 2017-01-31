@@ -48,6 +48,9 @@ li{
 			padding-left: 8px;
 			bottom: 0;
 			width: 100%;
+			p{
+				font-size: 20px;
+			}
 		}
 		.d-product-footer{
 			.d-purchase-price{
@@ -91,6 +94,11 @@ li{
 			padding-left: 8px;
 			bottom: 0;
 			width: 100%;
+			p{
+				font-size: 150%;
+				margin-left: 5%;
+				margin-right: 5%;
+			}
 		}
 		.product-footer{
 			bottom: 0;
@@ -111,6 +119,8 @@ li{
 	bottom: 12px;
 	width: 15%;
 	border: 2px solid #b20000;
+	cursor: pointer;
+	cursor: hand;
 			}
 .home-view{
 	border: solid white 4px;
@@ -163,6 +173,54 @@ li{
 	    }
 
 }
+.header-admin{
+	background-color: white;
+	width: 100%;
+	.admin-left{
+		width: 33%;
+		display: inline-block;
+    	.userName{
+    		display: inline-block;
+    		margin: 0;
+    		font-size: 12px;
+    		float: left;
+    	}
+    }
+    .admin-center{
+    	width: 33%;
+    	display: inline-block;
+    	.postLink{
+    		display: inline-block;
+    		margin: 0 .5rem;
+			padding: 0 1rem;
+			height: 40px;
+			line-height: 40px;
+			color: #696969;
+    	}
+    	.profileLink{
+    		display: inline-block;
+    		margin: 0 .5rem;
+			padding: 0 1rem;
+			height: 40px;
+			line-height: 40px;
+			color: #696969;
+    	}
+    }
+    .admin-right{
+    	width: 33%;
+    	display: inline-block;
+    	.logout{
+    		display: inline-block;
+    		float: right;
+    		background-color: #b20000;
+			color: white;
+			border: 2px solid #b20000;
+			cursor: pointer;
+			cursor: hand;
+    	}
+    }	
+}
+
 
 .header-nav{
 	background-color: white;
@@ -177,7 +235,7 @@ li{
 	nav {
 		text-align: center;
 	}
-	.link, .link2{
+	.link, .link2, .link3{
 		margin: 0 .5rem;
 		padding: 0 1rem;
 		height: 40px;
@@ -190,6 +248,38 @@ li{
 		padding-right: 10px;
 		float: right;
 	}
+}
+.post-display{
+	width: 70%;
+	display: inline-block;
+}
+.post-archive{
+	width: 20%;
+	display: inline-block;
+	vertical-align: top;
+	border: solid white 5px;
+	.archive-title{
+		background-color: #CAEBF2;
+		color: #696969;
+		text-align: center;
+		margin-top: 0;
+	}
+	.archive-list{
+		width: 100%;
+		.post-button{
+		background-color: #b20000;
+		color: white;
+		width: 100%;
+		border: 2px solid #b20000;
+		margin-bottom: 5px;
+		}
+	}
+}
+.blog-title{
+	background-color: #CAEBF2;
+	color: #696969;
+	text-align: center;
+	margin-top: 0;
 }
 
 .post{

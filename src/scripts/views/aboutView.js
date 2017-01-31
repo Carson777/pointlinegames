@@ -5,7 +5,7 @@ import Header from './header'
 
 var HomeView = React.createClass({
 	componentWillMount: function() {
-		//ACTIONS.fetchAllPosts()
+		ACTIONS.fetchAllPosts()
 		STORE.on('storeChanged',()=>{
 			this.setState(STORE._getData())
 		})

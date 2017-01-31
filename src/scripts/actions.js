@@ -4,12 +4,14 @@ import {PostCollection,PostModel} from './models'
 window.User = User
 
 const ACTIONS = {
-	createPost: function(post,title) {
+	createPost: function(post,title,header) {
 		var newPostAttrs = {
 			title: title,
+			header: header,
 			content: post,
 			userId: User.getCurrentUser()._id,
-			email: User.getCurrentUser().email
+			email: User.getCurrentUser().email,
+			date: new Date()
 		}
 
 		STORE._get('postCollection').add(newPostAttrs)
@@ -21,17 +23,18 @@ const ACTIONS = {
 			.then(
 				function(resp){
 					console.log(resp)
-					alert("Task Successfully Added")
+					alert("Post Successfully Added")
+					location.hash = 'blog/new'
 				},
 				function(err){
 					console.log(err)
-					alert("Here's a task: learn to code!")
+					alert("Post Failed. Give Carson an earful")
 				})
 		STORE._emitChange()
 	},
 	deletePost: function(model) {
 		model.destroy()
-			.done(()=>alert(model.get('first_name') + 'deleted!'))
+			//.done(()=>alert(model.get('first_name') + 'deleted!'))
 			.fail(()=>alert(model.get('first_name') + 'delete failed'))
 		STORE._emitChange()
 	},
@@ -62,12 +65,24 @@ const ACTIONS = {
 			}
 		)
 	},
-	fetchAllPosts: function() {
+	fetchAllPosts: function(selectedPost) {
 		var P = new PostCollection()
 		P.fetch().then(
 			function(){
+				var temp = ''
+				if(selectedPost === 'new'){
+					var last = P.models.length - 1
+					temp = P.models[last]
+				} else {
+					for(var i = 0; i < P.models.length; i++){
+						if (P.models[i].attributes.title === selectedPost){
+							temp = P.models[i]
+						}
+					}
+				}
 				STORE._set({
-					postCollection: P
+					postCollection: P,
+					selectedPost: [temp]
 				})
 			},
 			function(err) {
@@ -108,12 +123,13 @@ const ACTIONS = {
 			)
 	},
 	loginUser: function(email,password){
+		console.log("user being logged in")
 		User.login(email, password)
 			.then(
 				function(resp){
 					console.log(resp)
 					alert('User succesfully logged in')
-					location.hash = 'forum'
+					location.hash = 'blog/new'
 				},
 				function(err){
 					console.log(err)
@@ -127,8 +143,8 @@ const ACTIONS = {
 				function(resp){
 					console.log(resp)
 					alert('User successfully logged out')
-					location.hash = 'login'
-					STORE._emitChange
+					location.hash = 'blog/new'
+					reload()
 				},
 				function(err){
 					console.log(err)
