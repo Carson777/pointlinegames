@@ -48,6 +48,7 @@ var Post = React.createClass({
 		return cleanDate
 	},
 	render: function(){
+		console.log(this.props.model)
 		var header = this.props.model.get('header')
 		var content = this.props.model.get('content')
 		return(
