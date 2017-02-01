@@ -19,32 +19,29 @@ var BlogView = React.createClass({
 			<div className='home-view'>
 				<Header />
 				<h2 className='blog-title'> Blog</h2>
-				<PostDisplay classname='post-display' collection={this.state}/>
+				<Post model={this.state.selectedPost}/>
 				<PostArchiveDisplay classname='post-archive-display' collection={this.state.postCollection}/>
 			</div>
 		)
 	}
 })
 
-var PostDisplay = React.createClass({
-	_makePost: function(postModel) {
-		return <Post model={postModel} />
-	},
-	render: function(){
-		var coll = this.props.collection.selectedPost
-		return(
-			<div className='post-display'>
-				<ul>
-	 				{coll.map(this._makePost).reverse()}
-	 			</ul>
-			</div>
-		)
-	}
-})
+// var PostDisplay = React.createClass({
+// 	_makePost: function(postModel) {
+// 		return <Post model={postModel} />
+// 	},
+// 	render: function(){
+// 		return(
+// 			<div className='post-display'>
+//  				<Post model={this.props.selectedPost} />
+// 			</div>
+// 		)
+// 	}
+// })
 var Post = React.createClass({
 	_cleanDate: function(){
 		var date = this.props.model.get('createdAt')
-		var cleanDate = date.substring(0, 10)
+		var cleanDate = date ? date.substring(0, 10) : ''
 		return cleanDate
 	},
 	render: function(){
@@ -52,12 +49,12 @@ var Post = React.createClass({
 		var header = this.props.model.get('header')
 		var content = this.props.model.get('content')
 		return(
-			<li className='post'>
+			<div className='post'>
 				<h3 className='postHeader'>{header}</h3>
 				<p className='postDate'>{this._cleanDate()}</p>
 				<p className='postContent'>{content}</p>
 				<Delete model={this.props.model}/>
-			</li>
+			</div>
 		)
 	}
 })

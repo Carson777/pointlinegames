@@ -7,7 +7,7 @@ const STORE = _.extend(Backbone.Events,{
 		postCollection: new PostCollection(),
 		productCollection: new ProductCollection(),
 		detailProduct: '',
-		selectedPost:[]
+		selectedPost: new PostModel()
 	},
 
 	_emitChange: function() {

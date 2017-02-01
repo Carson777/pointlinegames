@@ -81,7 +81,7 @@ const ACTIONS = {
 				}
 				STORE._set({
 					postCollection: P,
-					selectedPost: [temp]
+					selectedPost: temp
 				})
 			},
 			function(err) {
